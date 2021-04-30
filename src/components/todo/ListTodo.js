@@ -14,7 +14,7 @@ const ListTodo = (props) => {
           )
         })
       ) : (
-        <p className="center">You have no todo's left, yay!</p>
+        <p className="pad left">You have no todo's left, yay!</p>
       );
     
       return (

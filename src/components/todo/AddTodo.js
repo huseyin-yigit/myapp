@@ -5,8 +5,8 @@ import React, { Component } from 'react'
 
   class AddTodo extends Component  {
     state = {
-        title: '',
-        text:''
+        title: 'Title Here',
+        text:'Text Here'
       }
       titleChange = (e) => {
         this.setState({
@@ -21,7 +21,7 @@ import React, { Component } from 'react'
       handleSubmit = (e) => {
         e.preventDefault();
        // console.log('abdr',this.props)
-        this.props.add_todo(this.state.text,this.state.title);
+        this.props.add_todo(this.state.title,this.state.text);
         this.setState({
           title: '',
           text:''
@@ -31,14 +31,14 @@ render(){
   
     return (
       <div>
-        <div className="container">
-          <h4 className="center">Todo</h4>
+        <div className="container center">
+          <h4 className="center"></h4>
           <div>
         <form onSubmit={this.handleSubmit}  >
-          <label>Add a new todo:</label>
+          <label className="App-header">Add a new todo:</label>
           <input type="text" name="title" onChange={this.titleChange} value={this.state.title} />
           <input type="text" name="text" onChange={this.textChange} value={this.state.text} />
-          <input type="submit" value="Submit" onSubmit={this.handleSubmit} />
+          <input  className="center" type="submit" value="Submit" onSubmit={this.handleSubmit} />
         </form>
       </div>
         </div>
