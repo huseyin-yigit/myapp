@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-
 // how you can make initial state empty ?
 
 const ListTodo = (props) => {
@@ -7,9 +6,9 @@ const ListTodo = (props) => {
     const todoList = props.todos.length>1 ? (
         props.todos.map(todo => {
           return (
-            <div className="collection-item" key={todo.id}>
-              <span> {todo.title}</span>
-              <span> {todo.text}</span>
+            <div className="collection-item"  key={todo.id}>
+              <p className="center"> {todo.title}</p> 
+              <p><span> {todo.text}</span></p>
             </div>
           )
         })

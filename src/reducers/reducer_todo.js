@@ -4,7 +4,7 @@ function nextTodoId(obj) {
   }
 
 const initialState = {
-    todos:[ {id:null, title:'', text:''  }]
+    todos:[ {id:null, title:null, text:null  }]
   };
 
 const reducer_todo=(state=initialState,action)=>{

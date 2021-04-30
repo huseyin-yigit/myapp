@@ -11,7 +11,7 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom'
 function App() {
   return (
     <BrowserRouter>
-      <div className="teal lighten-5 " style={{ height: '100%', position: 'absolute', left: '0px', width: '100%', overflow: 'hidden'}}>
+      <div className="teal lighten-5 " style={{ height: '100%', position: 'sticky', left: '0px', width: '100%', overflow: 'hidden'}}>
         <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />
