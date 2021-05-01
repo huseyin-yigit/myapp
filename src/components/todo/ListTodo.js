@@ -1,11 +1,15 @@
 import { connect } from 'react-redux'
 // how you can make initial state empty ?
 
+
 const ListTodo = (props) => {
+//console.log('props abdr', props)
+
     console.log('abdr', props)
     const todoList = props.todos.length>1 ? (
-        props.todos.map(todo => {
+        props.todos.filter((x)=>x.id !== null).map(todo => {
           return (
+            
             <div className="collection-item"  key={todo.id}>
               <p className="center"> {todo.title}</p> 
               <p><span> {todo.text}</span></p>
@@ -13,7 +17,7 @@ const ListTodo = (props) => {
           )
         })
       ) : (
-        <p className="pad left">You have no todo's left, yay!</p>
+        <p className="pad center">You have no todo's left, yay!</p>
       );
     
       return (
