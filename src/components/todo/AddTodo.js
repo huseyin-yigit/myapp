@@ -33,7 +33,7 @@ render(){
           <label className="App-header">Add a new todo:</label>
           <input type="text" name="title" onChange={this.onChange} value={this.state.title} />
           <input type="text" name="text" onChange={this.onChange} value={this.state.text} />
-          <input  className="center" type="submit" value="Submit" onSubmit={this.handleSubmit} />
+          <input  className="center" type="submit" value="Submit" />
         </form>
       </div>
         </div>

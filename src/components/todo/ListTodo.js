@@ -11,7 +11,9 @@ const ListTodo = (props) => {
           return (
             
             <div className="collection-item"  key={todo.id}>
-              <p className="center"> {todo.title}</p> 
+              <input type="submit" value="Edit" className="left"/>
+              <input type="submit" value="Delete" className="right"/>
+              <h6 className="center"> <b>{todo.title}</b></h6>
               <p><span> {todo.text}</span></p>
             </div>
           )
