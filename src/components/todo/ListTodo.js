@@ -1,18 +1,22 @@
 import { connect } from 'react-redux'
+import {delete_todo,edit_todo} from '../../actions/action_todo'
 // how you can make initial state empty ?
 
-
+//
 const ListTodo = (props) => {
-//console.log('props abdr', props)
+//console.log('listprops', props)
 
-    console.log('abdr', props)
+function delete_id(id) {
+  //console.log('delete calisti',id)
+  props.delete_todo(id);
+}
     const todoList = props.todos.length>1 ? (
         props.todos.filter((x)=>x.id !== null).map(todo => {
           return (
             
             <div className="collection-item"  key={todo.id}>
               <input type="submit" value="Edit" className="left"/>
-              <input type="submit" value="Delete" className="right"/>
+              <input type="submit" value="Delete" className="right" onClick={() => delete_id(todo.id)}/>
               <h6 className="center"> <b>{todo.title}</b></h6>
               <p><span> {todo.text}</span></p>
             </div>
@@ -34,5 +38,9 @@ const ListTodo = (props) => {
     }
   }
   
-
-  export default connect(mapStateToProps)(ListTodo)
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      delete_todo: (id) => dispatch(delete_todo(id))
+    }
+  }
+  export default connect(mapStateToProps,mapDispatchToProps)(ListTodo)

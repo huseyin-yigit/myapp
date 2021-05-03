@@ -20,7 +20,10 @@ const reducer_todo=(state=initialState,action)=>{
 
             }
         case 'DELETE_TODO':
-            const newtodos = state.todos.filter(todos=>(todos.id !==action.id) )
+            console.log('delete reducer action id: ',action.payload)
+            console.log('delete reducer todos: ',state.todos)
+            const newtodos = state.todos.filter(todos=>(todos.id !==action.payload) )
+            console.log('newtodolist:',newtodos)
             return{
                 ...state,newtodos  // replacing state
             }

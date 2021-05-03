@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import {add_todo,delete_todo,edit_todo} from '../../actions/action_todo'
+import {add_todo} from '../../actions/action_todo'
 import PropTypes from 'prop-types';
 import React, { Component } from 'react'
 
@@ -23,7 +23,7 @@ import React, { Component } from 'react'
         })
       }
 render(){
-  
+ // console.log('props abdr', this.props)
     return (
       <div>
         <div className="container center">
