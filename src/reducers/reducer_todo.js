@@ -5,7 +5,7 @@
 
   function increaseId(todos) {
     return (
-    todos.length == 0 ? 1 : todos[todos.length-1].id+1
+    todos.length === 0 ? 1 : todos[todos.length-1].id+1
     )
   }
 
@@ -27,13 +27,26 @@ const reducer_todo=(state=initialState,action)=>{
 
             }
         case 'DELETE_TODO':
-            console.log('delete reducer action id: ',action.payload)
-            console.log('delete reducer todos: ',state.todos)
+            //console.log('delete reducer action id: ',action.payload)
+           // console.log('delete reducer todos: ',state.todos)
             let newtodos = state.todos.filter(todos=>(todos.id !==action.payload) )
-            console.log('newtodolist:',newtodos)
+            //console.log('newtodolist:',newtodos)
             return{
                 todos:newtodos  // replacing state
             }
+
+            case 'EDIT_TODO':
+            //  console.log('edit reducer payload:: ',action.payload)
+              const newEdit = {
+                id: action.payload.id,
+                title: action.payload.title,
+                text: action.payload.text,
+            } 
+              let newEditTodos = state.todos.map(todos=>(todos.id === action.payload.id ? newEdit : todos))
+              //console.log('newEditTodos:',newEditTodos)
+              return{
+                  todos:newEditTodos  // replacing state
+              }
         default:   // Do not forget to write default state
         return state;
     }

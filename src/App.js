@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Todo from './components/todo/Todo'
+import EditTodo from './components/todo/EditTodo'
 import Users from './components/Users'
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
 
@@ -16,6 +17,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/todo' component={Todo} />
+          <Route path='/todo_edit' component={EditTodo} />
           <Route path='/users' component={Users} />
         </Switch>
       </div>
