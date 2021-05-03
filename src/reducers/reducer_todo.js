@@ -1,17 +1,24 @@
-function nextTodoId(obj) {
-    const maxId = obj.reduce((maxId, obj) => Math.max(obj.id, maxId), -1)
-    return maxId + 1
+// function nextTodoId(obj) {
+//     const maxId = obj.reduce((maxId, obj) => Math.max(obj.id, maxId), -1)
+//     return maxId + 1
+//   }
+
+  function increaseId(todos) {
+    return (
+    todos.length == 0 ? 1 : todos[todos.length-1].id+1
+    )
   }
 
 const initialState = {
-    todos:[ {id:null, title:null, text:null  }]
+   // todos:[ {id:null, title:null, text:null  }]
+    todos:[]
   };
 
 const reducer_todo=(state=initialState,action)=>{
     switch(action.type){
         case 'ADD_TODO':
             const newtodo = {
-                id:nextTodoId(state.todos),
+                id:increaseId(state.todos),
                 title: action.payload.title,
                 text: action.payload.text,
             } 

@@ -10,7 +10,7 @@ function delete_id(id) {
   //console.log('delete calisti',id)
   props.delete_todo(id);
 }
-    const todoList = props.todos.length>1 ? (
+    const todoList = props.todos.length>0 ? (
         props.todos.filter((x)=>x.id !== null).map(todo => {
           return (
             
