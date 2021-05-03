@@ -16,16 +16,16 @@ const reducer_todo=(state=initialState,action)=>{
                 text: action.payload.text,
             } 
             return{
-                ...state,todos:[...state.todos,newtodo]  // Adding to state
+               todos:[...state.todos,newtodo]  // Adding to state
 
             }
         case 'DELETE_TODO':
             console.log('delete reducer action id: ',action.payload)
             console.log('delete reducer todos: ',state.todos)
-            const newtodos = state.todos.filter(todos=>(todos.id !==action.payload) )
+            let newtodos = state.todos.filter(todos=>(todos.id !==action.payload) )
             console.log('newtodolist:',newtodos)
             return{
-                ...state,newtodos  // replacing state
+                todos:newtodos  // replacing state
             }
         default:   // Do not forget to write default state
         return state;

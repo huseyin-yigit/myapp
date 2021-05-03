@@ -4,7 +4,7 @@ import {delete_todo,edit_todo} from '../../actions/action_todo'
 
 //
 const ListTodo = (props) => {
-//console.log('listprops', props)
+console.log('listprops', props)
 
 function delete_id(id) {
   //console.log('delete calisti',id)
