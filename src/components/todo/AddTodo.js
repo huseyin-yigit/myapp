@@ -30,10 +30,10 @@ render(){
           <h4 className="center"></h4>
           <div>
         <form onSubmit={this.handleSubmit}  >
-          <label className="App-header">Add a new todo:</label>
+          <label className="App-header blue">Add a new todo:</label>
           <input type="text" name="title" onChange={this.onChange} value={this.state.title} />
           <input type="text" name="text" onChange={this.onChange} value={this.state.text} />
-          <input  className="center" type="submit" value="Submit" />
+          <input  className="center" type="submit" value="Submit" className="btn green"/>
         </form>
       </div>
         </div>

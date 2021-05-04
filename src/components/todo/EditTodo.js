@@ -34,7 +34,7 @@ render(){
           <h4 className="center"></h4>
           <div>
         <form onSubmit={this.handleSubmit}>
-          <label className="App-header">Edit todo:</label>
+          <label className="App-header blue">Edit todo:</label>
           <input type="text" name="title" onChange={this.onChange} value={this.state.title} />
           <input type="text" name="text" onChange={this.onChange} value={this.state.text} />
           <Link  className="btn" to={{pathname:'/todo'}}>Back to List</Link> {' '} <input  className="center btn blue" type="submit" value="Update" />
