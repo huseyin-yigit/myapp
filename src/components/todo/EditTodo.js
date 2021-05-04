@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 
   class EditTodo extends Component  {
     state = {
-        id: this.props.location.state.id,
-        title: this.props.location.state.title,
-        text: this.props.location.state.text,
+        id: this.props.statetodo.id,
+        title: this.props.statetodo.title,
+        text: this.props.statetodo.text
       }
       onChange = (e) => {
         this.setState({
@@ -27,7 +27,7 @@ import { Link } from 'react-router-dom'
       }
 
 render(){
- // console.log('props edit', this.props)
+  console.log('props edit', this.props.statetodo)
     return (
       <div>
         <div className="container center">
@@ -45,9 +45,13 @@ render(){
     )
   }
 }
-  const mapStateToProps = (state) => {
+  const mapStateToProps = (state,ownProps) => {
+    const updateTodo = state.reducer_todo.todos.filter(todo => todo.id === ownProps.location.state);
     return {
-      todos : state.reducer_todo.todos
+
+      statetodo : updateTodo[0] // filter returns list picking the first one
+     
+      
     }
   }
   
