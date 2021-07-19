@@ -1,12 +1,11 @@
 import { connect } from 'react-redux'
 import {add_todo} from '../../actions/action_todo'
-import PropTypes from 'prop-types';
 import React, { Component } from 'react'
 
   class AddTodo extends Component  {
     state = {
-        title: 'Title Here',
-        text:'Text Here'
+        title: '',
+        text:''
       }
       onChange = (e) => {
         this.setState({
@@ -27,13 +26,12 @@ render(){
     return (
       <div>
         <div className="container center">
-          <h4 className="center"></h4>
           <div>
         <form onSubmit={this.handleSubmit}  >
           <label className="App-header blue">Add a new todo:</label>
-          <input type="text" name="title" onChange={this.onChange} value={this.state.title} />
-          <input type="text" name="text" onChange={this.onChange} value={this.state.text} />
-          <input  className="center" type="submit" value="Submit" className="btn green"/>
+          <input type="text" name="title" onChange={this.onChange} value={this.state.title} placeholder="Add Title"/>
+          <input type="text" name="text" onChange={this.onChange} value={this.state.text} placeholder="Add Text"/>
+          <input  className="center btn green" type="submit" value="Submit"/>
         </form>
       </div>
         </div>
@@ -53,12 +51,4 @@ render(){
     }
   }
 
-  // AddTodo.propTypes = {
-  //   id: PropTypes.number,
-  //   data: PropTypes.string
-  // }
-  // AddTodo.defaultProps = {
-  //   id: null,
-  //   data:null
-  //   };
   export default connect(mapStateToProps, mapDispatchToProps)(AddTodo)

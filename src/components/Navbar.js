@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink, withRouter } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 
 const Navbar = (props) => {
   return (
@@ -9,6 +9,7 @@ const Navbar = (props) => {
         <li><NavLink exact to="/">Home</NavLink></li>
           <li><NavLink to='/todo'>Todo</NavLink></li>
           <li><NavLink to='/users'>Users</NavLink></li>
+          <li><NavLink to='/customers'>Customers</NavLink></li>
         </ul>
       </div>
       

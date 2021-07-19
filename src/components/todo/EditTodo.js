@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 import {edit_todo} from '../../actions/action_todo'
-import PropTypes from 'prop-types';
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -27,11 +26,10 @@ import { Link } from 'react-router-dom'
       }
 
 render(){
-  console.log('props edit', this.props.statetodo)
+ // console.log('props edit', this.props.statetodo)
     return (
       <div>
         <div className="container center">
-          <h4 className="center"></h4>
           <div>
         <form onSubmit={this.handleSubmit}>
           <label className="App-header blue">Edit todo:</label>
@@ -61,12 +59,4 @@ render(){
     }
   }
 
-  // AddTodo.propTypes = {
-  //   id: PropTypes.number,
-  //   data: PropTypes.string
-  // }
-  // AddTodo.defaultProps = {
-  //   id: null,
-  //   data:null
-  //   };
   export default connect(mapStateToProps, mapDispatchToProps)(EditTodo)

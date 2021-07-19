@@ -36,7 +36,7 @@ const reducer_todo=(state=initialState,action)=>{
             }
 
             case 'EDIT_TODO':
-            //  console.log('edit reducer payload:: ',action.payload)
+              console.log('edit todo reducer payload:: ',action.payload)
               const newEdit = {
                 id: action.payload.id,
                 title: action.payload.title,
