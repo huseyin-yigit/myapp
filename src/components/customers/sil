@@ -1,0 +1,96 @@
+import React, { useState } from 'react';
+import { Button, FormLabel } from '@grantsolutions/grant-solutions-ui';
+import PropTypes from 'prop-types';
+import AddObjective from './AddObjective';
+
+const ObjectivesPropTypes = {
+  readOnly: PropTypes.bool,
+  reportStatus: PropTypes.string,
+  // eslint-disable-next-line
+  objective: PropTypes.array
+};
+
+const ObjectivesDefaultProps = {
+  readOnly: false,
+  reportStatus: '',
+  objective: []
+};
+
+const Objectives = props => {
+  const { readOnly, reportStatus, objective } = props;
+
+  const initialState = {
+    add: false,
+    count: 0
+  };
+  const [{ add, count }, setState] = useState(initialState);
+  const addobjectivefunction = e => {
+    setState(prevState => ({
+      ...prevState,
+      Add: true,
+      count: prevState.count + 1
+    }));
+  };
+
+  const objectivesfield = [];
+  console.log('from objectives', objective[0], objective.length);
+  // eslint-disable-next-line
+  for (let i = 0; i < objective.length + count ; i++) {
+    objectivesfield.push(
+      <AddObjective
+        objectiveId={i < objective.length ? objective[i].id : null}
+        objectivedescription={
+          i < objective.length ? objective[i].description : ''
+        }
+        completionStatus={
+          i < objective.length ? objective[i].completionStatus : ''
+        }
+        completionAction={
+          i < objective.length ? objective[i].completionAction : ''
+        }
+        add={add}
+        count={i + 1}
+      />
+    );
+  }
+
+  const title = 'Objective';
+  const description =
+    'Please provide the approved project’s objectives here. At the final report, if “No” is selected for any of the listed objectives, you must expand upon this in the comment.';
+  return (
+    <div className="form-section__content child-margin-reset p-24 mb-64">
+      <header className="h4 text-field-label mb-0">
+        {title}
+        <span className="h5 font-weight-normal ml-4">(Required)</span>
+      </header>
+
+      <p className="ml-0 pt-4 mb-0 pb-0 mt-8">
+        <FormLabel className="font-weight-normal" required>
+          {description}
+        </FormLabel>
+      </p>
+      <br />
+      {objectivesfield}
+      <div className="pane pane--elevated text-center mt-32 ml-16 mb-16 mr-16">
+        <Button
+          disabled={readOnly || reportStatus !== 'In Progress'}
+          className="my-40"
+          onClick={() =>
+            setState(prevState => ({
+              ...prevState,
+              add: true,
+              count: prevState.count + 1
+            }))
+          }
+        >
+          + Add Objective
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+Objectives.propTypes = ObjectivesPropTypes;
+Objectives.defaultProps = ObjectivesDefaultProps;
+
+export default Objectives;

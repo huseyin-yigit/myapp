@@ -10,6 +10,9 @@ const Navbar = (props) => {
           <li><NavLink to='/todo'>Todo</NavLink></li>
           <li><NavLink to='/users'>Users</NavLink></li>
           <li><NavLink to='/customers'>Customers</NavLink></li>
+          <li><NavLink to='/use'>Use</NavLink></li>
+          <li><NavLink to='/autosave'>Autosave</NavLink></li>
+          <li><NavLink to='/narrative'>Narrative</NavLink></li>
         </ul>
       </div>
       

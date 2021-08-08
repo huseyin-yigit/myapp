@@ -1,4 +1,4 @@
-import {delete_customer} from '../../actions/action_customer'
+//import {delete_customer} from '../../actions/action_customer'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
@@ -31,15 +31,18 @@ const customerList = props.customers.length>0 ? (
         </div>
       )
   } 
-  const mapStateToProps = (state) => {
-    return {
-      customers : state.reducer_customer.customers
-    }
-  }
+
+  export default ListCustomers
+
+  // const mapStateToProps = (state) => {
+  //   return {
+  //     customers : state.reducer_customer.customers
+  //   }
+  // }
   
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      delete_customer: (id) => dispatch(delete_customer(id))
-    }
-  }
-  export default connect(mapStateToProps,mapDispatchToProps)(ListCustomers)
+  // const mapDispatchToProps = (dispatch) => {
+  //   return {
+  //     delete_customer: (id) => dispatch(delete_customer(id))
+  //   }
+  // }
+  // export default connect(mapStateToProps,mapDispatchToProps)(ListCustomers)
