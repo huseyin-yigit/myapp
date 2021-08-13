@@ -13,6 +13,7 @@ const Navbar = (props) => {
           <li><NavLink to='/use'>Use</NavLink></li>
           <li><NavLink to='/autosave'>Autosave</NavLink></li>
           <li><NavLink to='/narrative'>Narrative</NavLink></li>
+          <li><NavLink to='/cardSample'>Card</NavLink></li>
         </ul>
       </div>
       

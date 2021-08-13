@@ -14,7 +14,7 @@ const useDebounce = (value, timeout) => {
 
 function Autosave({ data, onSave }) {
  // console.log('inside autosave');
-  const debounceData = useDebounce(data, 5000);
+  const debounceData = useDebounce(data, 3000);
   useEffect(() => {
     onSave(debounceData);
   }, [debounceData]);

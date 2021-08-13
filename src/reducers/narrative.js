@@ -29,7 +29,7 @@ const initialState = {
                     ...state,challenges:newchallenges // replacing state
         }        
         case 'DELETE_CHALLENGE':
-            //console.log('DELETE_CHALLENGE action',action.payload)
+            console.log('DELETE_CHALLENGE action',action.payload)
            let newchallenge = state.challenges.filter((challenge,index)=> (index !==action.payload))  
             //console.log('newchallenges',newchallenges)
             return{

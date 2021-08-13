@@ -5,13 +5,13 @@ import { connect } from "react-redux";
   const AddChallenge = (props) => {
     const {challenge,delete_challenge,update_challenge,chalIndex}=props
    // console.log('addchall',chalIndex)
-    const [name, setName] = useState(challenge.name);
-    const [email, setEmail] = useState(challenge.email);
+//     const [name, setName] = useState(challenge.name);
+//     const [email, setEmail] = useState(challenge.email);
 
-   useEffect(() => {
-    setName(challenge.name)
-    setEmail(challenge.email)
-  }, [challenge]);
+//    useEffect(() => {
+//     setName(challenge.name)
+//     setEmail(challenge.email)
+//   }, [challenge]);
 
    const onChange = (e) => {
         //   if (e.target.name==="name"){setName(e.target.value)}
@@ -25,8 +25,8 @@ import { connect } from "react-redux";
           <div className="right">
           <input  className="center btn green" onClick={()=>delete_challenge(chalIndex)} type="submit" value={'Delete' + chalIndex} />
           </div><div>
-          <input type="text" name="name" onChange={onChange} value={name} placeholder="Add Name"/>
-          <input type="email" name="email" onChange={onChange} value={email} placeholder="Add Email"/>
+          <input type="text" name="name" onChange={onChange} value={challenge.name} placeholder="Add Name"/>
+          <input type="email" name="email" onChange={onChange} value={challenge.email} placeholder="Add Email"/>
       </div>
         </div>
         <br/></p>
