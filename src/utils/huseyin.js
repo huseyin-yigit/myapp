@@ -1,1 +1,1 @@
-console.log('mrhaba')
+console.log('mrhaba yeni dunya')
