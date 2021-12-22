@@ -6,6 +6,7 @@ pipeline {
                 sh 'docker build -t mydemo .'
                 
             }
+        }
             stage('Run Application') {
             steps {
                 
