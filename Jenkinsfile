@@ -10,7 +10,7 @@ pipeline {
             stage('Run Application') {
             steps {
                 
-                sh 'docker run -dp 80:3000 mydemo'
+                sh 'docker run -dp 9090:3000 mydemo'
             }
             
         }
