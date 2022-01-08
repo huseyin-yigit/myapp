@@ -5,4 +5,4 @@ RUN yarn build
 
 FROM nginx
 WORKDIR myapp
-COPY from=base /build /usr/share/nginx/html
+COPY --from=base /build /usr/share/nginx/html
