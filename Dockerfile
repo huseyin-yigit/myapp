@@ -1,5 +1,8 @@
-FROM node:14
-WORKDIR myapp 
+ROM node:14 AS base-image 
 COPY . .
 RUN yarn install
-CMD ["yarn", "start"]
+RUN yarn build 
+
+FROM nginx
+WORKDIR myapp
+COPY from = base - image /build /usr/share/nginx/html
