@@ -1,4 +1,4 @@
-ROM node:14 AS base-image 
+FROM node:14 AS base-image 
 COPY . .
 RUN yarn install
 RUN yarn build 
