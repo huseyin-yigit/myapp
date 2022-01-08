@@ -1,8 +1,8 @@
-FROM node:14 AS base-image 
+FROM node:14 AS base 
 COPY . .
 RUN yarn install
 RUN yarn build 
 
 FROM nginx
 WORKDIR myapp
-COPY from = base - image /build /usr/share/nginx/html
+COPY from=base /build /usr/share/nginx/html
