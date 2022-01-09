@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('Build and Deploy to ECR') {
       steps{
-        sh "ls"
+        sh 'ls'
       }
       }
     }  
