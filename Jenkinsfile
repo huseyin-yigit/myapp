@@ -8,7 +8,10 @@ pipeline {
   }  
   agent { label 'docker-compose' }
   stages {
-    stage('Build and Deploy to ECR') {
+	  stage ('list') {
+		  sh "ls"
+	  }
+	  stage('Build and Deploy to ECR') {
       steps{
         script {
           def dockerImage = docker.build registry + ":$BUILD_NUMBER"
