@@ -6,7 +6,7 @@ pipeline {
     AWS_ECS_SERVICE = 'tradesies-frontend-serv'
     AWS_ECS_TASK_DEFINITION = "tradesies-frontend-tg"
   }  
-  agent any
+  agent { label 'docker-compose' }
   stages {
     stage('Build and Deploy to ECR') {
       steps{
@@ -21,4 +21,5 @@ pipeline {
       }
     
     } 
+}
 }
