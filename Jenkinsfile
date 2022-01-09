@@ -8,8 +8,10 @@ pipeline {
   }  
   agent { label 'docker-compose' }
   stages {
-	  stage ('list') {
+	  stage('list') {
+		  steps{
 		  sh "ls"
+		  }
 	  }
 	  stage('Build and Deploy to ECR') {
       steps{
